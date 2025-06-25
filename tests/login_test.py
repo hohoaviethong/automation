@@ -16,5 +16,5 @@ class Testlogin(BaseTest):
         driver = self.driver
         login_page = LoginPage(self.driver)
         login_page.enter_username("Admin")
-        login_page.enter_password("admin1423")
+        login_page.enter_password("admin123")
         login_page.click_login_button()
