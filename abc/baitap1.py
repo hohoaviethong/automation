@@ -10,11 +10,10 @@ driver.get("https://www.letskodeit.com/practice")
 hide_btn = driver.find_element(By.XPATH, "//input[@id='hide-textbox']")
 hide_btn.click()
 sleep(5)
-show_btn = driver.find_element(By.XPATH, "//input[@type='submit']")
 
 #using Javascript
 displayed_texbox = driver.find_element(By.XPATH, "//input[@name='show-hide']")
 driver.execute_script("arguments[0].value = 'Hello word'", displayed_texbox)
 sleep(5)
-show_btn.click()
+show_btn = driver.find_element(By.XPATH, "//input[@id='show-textbox']").click()
 sleep(5)
