@@ -30,3 +30,8 @@ class LoginPage():
             lambda d: d.find_element(*self.login_button)
         )
         login_button.click()
+
+    def login(self, username: str, password: str):
+         self.enter_username(username)
+         self.enter_password(password)
+         self.click_login_button()
