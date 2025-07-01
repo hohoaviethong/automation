@@ -10,8 +10,7 @@ class AdminPage:
     def __init__(self, driver):
         self.driver = driver
         self.login_page = LoginPage(self.driver)  
-        # Gợi ý chuẩn nhất cho Bé
-        admin_btn = (By.XPATH, "//span[contains(@class, 'oxd-main-menu-item--name') and text()='Admin']")
+        self.admin_btn = (By.XPATH, "//span[contains(text()='Admin')]")
         self.title = (By.CSS_SELECTOR, ".oxd-topbar-header-title")
 
     def login_to_admin(self, username: str, password: str):
