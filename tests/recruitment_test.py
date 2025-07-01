@@ -6,14 +6,13 @@ from selenium.webdriver.common.keys import Keys
 import pytest
 from pages.login_page import LoginPage
 from tests.base_test import BaseTest
-from pages.admin_page import AdminPage
+from pages.recruitment_page import RecruitmentPage
 
-class TestAdmin(BaseTest):  
-    def test_admin_page(self):
+class TestRecruitPage(BaseTest):
+    def test_recruit_page(self):
         login_page = LoginPage(self.driver)
         login_page.login("Admin", "admin123")
-        admin_page = AdminPage(self.driver)
-      
-        #assert admin_page.is_admin_displayed()
-        assert admin_page.is_admin_clickable()
-        #assert admin_page.is_title_displayed()
+        recruitment_page = RecruitmentPage(self.driver)
+        recruitment_page.click_recruitment
+        recruitment_page.click_vacancies
+        recruitment_page.click_add
