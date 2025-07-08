@@ -3,6 +3,7 @@ from selenium import webdriver
 from utils.read_config import ConfigReader
 import allure
 import requests
+import tempfile
 
 
 
@@ -44,7 +45,10 @@ class BaseTest:
 
         if "ui" in request.keywords:
             # Setup cho UI test
-            self.driver = webdriver.Chrome()
+            temp_dir = tempfile.mkdtemp()
+            options = webdriver.ChromeOptions()
+            options.add_argument(f"--user-data-dir={temp_dir}")
+            self.driver = webdriver.Chrome(options=options)
             self.driver.get(ConfigReader.get_url())
             self.driver.maximize_window()
 
