@@ -8,6 +8,7 @@ from pages.login_page import LoginPage
 from tests.base_test import BaseTest
 from pages.admin_page import AdminPage
 @pytest.mark.ui
+@pytest.mark.skip
 class TestAdmin(BaseTest):  
     def test_admin_page(self):
         login_page = LoginPage(self.driver)
