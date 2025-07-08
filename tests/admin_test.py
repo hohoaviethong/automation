@@ -13,6 +13,8 @@ class TestAdmin(BaseTest):
         login_page = LoginPage(self.driver)
         login_page.login("Admin", "admin123")
         admin_page = AdminPage(self.driver)
+
+        self.driver.implicitly_wait(15)
       
         assert admin_page.is_admin_displayed()
         assert admin_page.is_admin_clickable()
