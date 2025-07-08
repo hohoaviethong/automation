@@ -1,6 +1,22 @@
-{"url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-"username": "Admin",
-"password": "admin123",
-"browser": "chrome",
-"timeout": 30
+{
+    "login_data": {
+        "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "username": "Admin",
+        "password": "admin123"
+    },
+    "browser": "chrome",
+    "timeout": 30,
+    "vacancy_data": {
+        "Vacancy Name": "Automation Tester",
+        "Job Title": "Automation Tester",
+        "Description": "Automation Test Is Running",
+        "Hiring Manager": "Jerry  Cantrell",
+        "Number of Position":  "1",
+        "Active": false,
+        "Publish in RSS Feb and Web Page": true
+  }
 }
+
+
+
+

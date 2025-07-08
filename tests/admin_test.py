@@ -7,13 +7,13 @@ import pytest
 from pages.login_page import LoginPage
 from tests.base_test import BaseTest
 from pages.admin_page import AdminPage
-
+@pytest.mark.ui
 class TestAdmin(BaseTest):  
     def test_admin_page(self):
         login_page = LoginPage(self.driver)
         login_page.login("Admin", "admin123")
         admin_page = AdminPage(self.driver)
       
-        #assert admin_page.is_admin_displayed()
+        assert admin_page.is_admin_displayed()
         assert admin_page.is_admin_clickable()
-        #assert admin_page.is_title_displayed()
+        assert admin_page.is_title_displayed()

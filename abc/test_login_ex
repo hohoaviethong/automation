@@ -1,0 +1,6 @@
+@pytest.mark.ui
+class TestLogin(BaseTest):
+    def test_valid_login(self):
+        login_page = LoginPage(self.driver)
+        login_page.login("Admin", "admin123")
+        assert login_page.is_displayed((By.XPATH, "//h6[text()='Dashboard']"))
