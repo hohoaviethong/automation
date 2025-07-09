@@ -22,7 +22,7 @@ class RecruitmentPage:
         self.vacancy_page = (By.XPATH, "//h5[@class='oxd-text oxd-text--h5 oxd-table-filter-title']")
         self.checkbox_active = (By.XPATH, "(//span[@class='oxd-switch-input oxd-switch-input--active --label-right'])[1]")
         self.checkbox_publish = (By.XPATH, "(//span[@class='oxd-switch-input oxd-switch-input--active --label-right'])[2]")
-    
+        self.current_user = (By.XPATH, "//input[@placeholder='Type for hints...']")
 
     #1.Click on Recruitment button
     def click_recruitment(self):
@@ -84,13 +84,13 @@ class RecruitmentPage:
         description_input.send_keys(vacancy_data["Description"])
 
         # hiring manager
-    def hiring_manager_input(self, vacancy_data):
+    def hiring_manager_input(self):
         hiring_manager_input = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, "//input[@placeholder='Type for hints...']"))
         )
-        hiring_manager_input.send_keys(vacancy_data["Hiring Manager"])
-        sleep(5)  # Wait for the dropdown to populate
-        hiring_manager_input.send_keys(Keys.ARROW_DOWN)  # Select the hiring manager from the dropdown
+        hiring_manager_input.send_keys(Keys.ARROW_DOWN)
+        hiring_manager_input.send_keys(self.current_user)
+        sleep(5) 
         hiring_manager_input.send_keys(Keys.ENTER)  # Select the hiring manager from the dropdown
 
         # number of positions

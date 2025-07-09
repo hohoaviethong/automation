@@ -27,7 +27,7 @@ class TestRecruitPage(BaseTest):
         recruitment_page.vacancy_name_input(vacancy_data)
         recruitment_page.select_job_title()
         recruitment_page.description_input(vacancy_data)
-        recruitment_page.hiring_manager_input(vacancy_data)
+        recruitment_page.hiring_manager_input()
         recruitment_page.number_of_positions_input()
         recruitment_page.set_checkbox1(vacancy_data["Active"])
         recruitment_page.set_checkbox2(vacancy_data['Publish in RSS Feb and Web Page'])

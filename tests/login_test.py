@@ -13,6 +13,5 @@ class Testlogin(BaseTest):
     def test_login(self, config):
         login_data = config["login_data"]
         self.driver.get(login_data["url"])
-
         login_page = LoginPage(self.driver)
         login_page.login(login_data["username"], login_data["password"])
